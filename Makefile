@@ -23,9 +23,9 @@ DATA		:=	data
 INCLUDES	:=	source source/third_party
 ROMFS		:=	romfs
 
-APP_TITLE	:=	Claude (Unofficial)
+APP_TITLE	:=	joymind
 APP_AUTHOR	:=	pouyakh.dev
-APP_VERSION	:=	1.0.0
+APP_VERSION	:=	1.1.0
 ICON		:=	icon.jpg
 
 #---------------------------------------------------------------------------------

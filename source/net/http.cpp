@@ -160,7 +160,7 @@ Result perform(const HttpRequest& req, bool streaming, std::function<bool(const 
         curl_easy_setopt(c, CURLOPT_TIMEOUT, 60L);
     }
     curl_easy_setopt(c, CURLOPT_HTTPHEADER, hdrs);
-    curl_easy_setopt(c, CURLOPT_USERAGENT, "ai-switch/" APP_VERSION_STR);
+    curl_easy_setopt(c, CURLOPT_USERAGENT, "joymind/" APP_VERSION_STR);
     curl_easy_setopt(c, CURLOPT_NOSIGNAL, 1L);
     curl_easy_setopt(c, CURLOPT_SSL_VERIFYPEER, 1L);
     curl_easy_setopt(c, CURLOPT_SSL_VERIFYHOST, 2L);

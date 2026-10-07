@@ -836,7 +836,7 @@ void App::drawSettings() {
     y += px(56);
 
     section("ABOUT");
-    text_.draw(F_Small, "Claude (Unofficial) " APP_VERSION_STR " by pouyakh.dev. Not affiliated with Anthropic.",
+    text_.draw(F_Small, "joymind " APP_VERSION_STR " by pouyakh.dev. Not affiliated with Anthropic or Nintendo.",
                x + px(16), y, col(C_Muted));
     y += text_.lineHeight(F_Small) + px(4);
     text_.draw(F_Small, "A select · B back · X new chat · Y keyboard · L/R scroll · + settings · - chats",

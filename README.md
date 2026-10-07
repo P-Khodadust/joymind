@@ -46,7 +46,7 @@ with the Homebrew Menu.
 
 1. Download `ai-switch.nro` from the [latest release](https://github.com/P-Khodadust/joymind/releases/latest).
 2. Copy it to `sdmc:/switch/` on your SD card.
-3. Start it from the Homebrew Menu. It shows up as **Claude (Unofficial)**. For the most memory, open the
+3. Start it from the Homebrew Menu. It shows up as **joymind**. For the most memory, open the
    Homebrew Menu by holding **R** while starting a game rather than from the Album.
 
 ## Quick start

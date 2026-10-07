@@ -6,7 +6,7 @@ tests on every push (see `.github/workflows/build.yml`).
 ## Verifying it step by step
 
 **Step 1, skeleton builds:** `make` prints `built ... ai-switch.nro` with no
-warnings. In hbmenu the entry shows "Claude (Unofficial)" by pouyakh.dev with the
+warnings. In hbmenu the entry shows "joymind" by pouyakh.dev with the
 sparkle icon.
 
 **Step 2, networking + providers, no Switch needed:**

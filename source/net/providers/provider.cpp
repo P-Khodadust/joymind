@@ -44,7 +44,7 @@ std::vector<Profile> providerPresets() {
         mk("Custom (OpenAI-compatible)", "openai_compat", "http://192.168.1.100:11434/v1", "", 4096,
            "max_tokens"),
     };
-    v[2].extraHeaders = {{"HTTP-Referer", "https://pouyakh.dev"}, {"X-Title", "Claude (Unofficial) for Switch"}};
+    v[2].extraHeaders = {{"HTTP-Referer", "https://pouyakh.dev"}, {"X-Title", "joymind"}};
     return v;
 }
 

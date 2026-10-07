@@ -36,7 +36,7 @@ int main(int, char**) {
     IMG_Init(IMG_INIT_JPG);  // screenshot thumbnails
     SDL_StopTextInput();  // we use swkbd directly; SDL text input would also swallow touch
     // RESIZABLE lets the SDL Switch port switch between 720p and 1080p on dock changes.
-    SDL_Window* win = SDL_CreateWindow("Claude (Unofficial)", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w, h,
+    SDL_Window* win = SDL_CreateWindow("joymind", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w, h,
                                        SDL_WINDOW_RESIZABLE);
     SDL_Renderer* ren =
         win ? SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC) : nullptr;
