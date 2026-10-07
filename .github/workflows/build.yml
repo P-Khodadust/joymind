@@ -13,6 +13,7 @@ jobs:
   nro:
     name: Switch build
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     container: devkitpro/devkita64:latest
     env:
       DEVKITPRO: /opt/devkitpro
@@ -35,10 +36,15 @@ jobs:
   tests:
     name: Host tests
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - name: Install libraries
-        run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev libssh2-1-dev
+        # timeouts + retries: a stalled Ubuntu mirror otherwise hangs apt-get forever
+        run: |
+          APT="-o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o Acquire::Retries=3"
+          sudo apt-get $APT update
+          sudo apt-get $APT install -y libcurl4-openssl-dev libssh2-1-dev
       - name: Build and run (mock AI server)
         run: |
           python3 tests/mock_server.py 8808 &
