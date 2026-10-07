@@ -1,0 +1,47 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: write  # attach the .nro to releases
+
+jobs:
+  nro:
+    name: Switch build
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64:latest
+    env:
+      DEVKITPRO: /opt/devkitpro
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ai-switch.nro
+        run: make -j"$(nproc)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ai-switch.nro
+          path: ai-switch.nro
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ai-switch.nro
+
+  tests:
+    name: Host tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install libraries
+        run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev libssh2-1-dev
+      - name: Build and run (mock AI server)
+        run: |
+          python3 tests/mock_server.py 8808 &
+          sleep 1
+          g++ -std=c++17 -Wall -Wextra -fsanitize=address,undefined -Isource -Isource/third_party \
+            tests/test_core.cpp source/net/sse.cpp source/net/http.cpp source/net/ssh.cpp \
+            source/net/providers/*.cpp source/markdown/markdown.cpp -lcurl -lssh2 -lpthread -o test_core
+          ./test_core http://127.0.0.1:8808

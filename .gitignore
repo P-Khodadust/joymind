@@ -1,0 +1,9 @@
+build/
+*.nro
+*.nacp
+*.elf
+*.lst
+*.map
+ai-switch-data/
+ai-switch-pc
+test_core
