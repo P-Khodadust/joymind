@@ -199,14 +199,20 @@ tool calls and results) and talks to `IProvider`. Everything is drawn with SDL2 
 ## Credits
 
 - [devkitPro](https://devkitpro.org) and [libnx](https://github.com/switchbrew/libnx), SDL2, SDL_ttf, SDL_image,
-  libcurl, libssh2, mbedtls and [nlohmann/json](https://github.com/nlohmann/json).
+  FreeType, HarfBuzz, libcurl, libssh2, Mbed TLS, libjpeg-turbo, libpng, libwebp, zlib, bzip2, Mesa and
+  [nlohmann/json](https://github.com/nlohmann/json). Their licenses and the full notice texts are in
+  [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+- Portions of this software are copyright © 2024 The FreeType Project (https://freetype.org). All rights reserved.
+- This software is based in part on the work of the Independent JPEG Group.
 - Fonts: [Inter](https://rsms.me/inter/), [Source Serif 4](https://github.com/adobe-fonts/source-serif) and
   [JetBrains Mono](https://www.jetbrains.com/lp/mono/), all under the SIL Open Font License (texts in
   `romfs/fonts/`).
 
 ## License
 
-[MIT](LICENSE) for the code. Fonts are under the SIL Open Font License 1.1, and nlohmann/json is MIT.
+[MIT](LICENSE) for the code. The release binary also contains third-party libraries under their own permissive
+licenses (zlib, MIT, BSD, ISC, FTL, IJG, Apache-2.0); see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Fonts are under the SIL Open Font License 1.1.
 
 joymind is an unofficial project. It is not affiliated with or endorsed by Anthropic, Nintendo, OpenAI or
 Google. Claude is a trademark of Anthropic; Nintendo Switch is a trademark of Nintendo. The sparkle icon is
